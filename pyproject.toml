@@ -1,0 +1,29 @@
+[project]
+name = "dune-agent"
+version = "0.1.0"
+description = "MCP agentic system with LangChain agents, LangGraph workflows, and MCP server tools."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Dune", email = "dev@dune.example" }]
+dynamic = ["dependencies"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
